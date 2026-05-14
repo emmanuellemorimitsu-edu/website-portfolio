@@ -73,7 +73,7 @@ body {
 .hero-section {
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-end; 
     justify-content: center;
     text-align: center;
     background: linear-gradient(
@@ -82,15 +82,14 @@ body {
         #1d242c 60%, 
         #2a3644 100% 
     );
-    padding: 0 20px;
+    padding-bottom: 80px;
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    color: #ffffff;
-    margin-bottom: 0.5rem;
-    letter-spacing: -1px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .tagline {
@@ -101,13 +100,16 @@ body {
 }
 
 .profile-photo {
-    width: 180px;
-    height: 180px;
+    /* Increased size so it consumes more space */
+    width: 280px; 
+    height: 280px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 3px solid var(--divider-color);
+    /* This margin pushes the name and tagline significantly lower */
+    margin-bottom: 60px; 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 4px solid var(--divider-color);
+    animation: float 6s ease-in-out infinite;
 }
 
 .about-section {
