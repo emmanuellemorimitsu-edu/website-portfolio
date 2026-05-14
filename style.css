@@ -181,6 +181,25 @@ body {
     transition: 0.3s;
 }
 
+.view-code-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #333; 
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.view-code-btn:hover {
+    background-color: var(--accent-color); 
+    transform: translateY(-2px);
+    color: #fff;
+}
+
 .tech-stack {
     font-size: 0.85rem;
     color: #666;
