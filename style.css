@@ -89,9 +89,27 @@ body {
     color: #666;
 }
 
-.about-section p {
-    margin-bottom: 40px; 
+.about-section {
+    background: linear-gradient(
+        to bottom, 
+        rgba(224, 242, 254, 1) 0%,   
+        rgba(244, 244, 249, 1) 30%   
+    );
+    padding: 100px 0;
+    background: linear-gradient(180deg, #eef7ff 0%, #f4f4f9 100%);
 }
+
+.about-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.about-section.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 .section-divider {
     border: 0;
@@ -189,4 +207,6 @@ body {
 
 .contact-links a:hover {
     background: var(--accent-color);
+    transform: translateY(-2px);
 }
+

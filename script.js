@@ -30,3 +30,19 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+const aboutSection = document.querySelector('.about-section');
+
+const observerOptions = {
+    threshold: 0.2 
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('appear');
+        }
+    });
+}, observerOptions);
+
+observer.observe(aboutSection);
