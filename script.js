@@ -1,14 +1,14 @@
-// changing navbar background owhile scrolling
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
+    
+    // Logic for background change
     if (window.scrollY > 50) {
-        navbar.style.background = '#ffffff';
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.9)';
+        navbar.classList.remove('scrolled');
     }
 });
 
-// pang smooth scroll
 const sections = document.querySelectorAll('section, header');
 const navLi = document.querySelectorAll('.nav-links li a');
 
@@ -16,7 +16,7 @@ window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 60) {
+        if (window.pageYOffset >= sectionTop - 60) {
             current = section.getAttribute('id');
         }
     });
@@ -24,15 +24,17 @@ window.addEventListener('scroll', () => {
     navLi.forEach(a => {
         a.classList.remove('active');
         if (a.getAttribute('href').includes(current)) {
-            a.style.color = '#007aff';
+            // Updated to use your CSS variable for the active link color
+            a.style.color = 'var(--accent-color)';
         } else {
-            a.style.color = '#333';
+            // Updated to use your CSS variable for regular links
+            a.style.color = 'var(--text-color)';
         }
     });
 });
 
+// --- Intersection Observer for About Section ---
 const aboutSection = document.querySelector('.about-section');
-
 const observerOptions = {
     threshold: 0.2 
 };
@@ -45,4 +47,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-observer.observe(aboutSection);
+if (aboutSection) {
+    observer.observe(aboutSection);
+}
