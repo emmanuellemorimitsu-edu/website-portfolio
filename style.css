@@ -89,6 +89,24 @@ body {
     color: #666;
 }
 
+.about-section p {
+    margin-bottom: 40px; 
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0; 
+    margin-bottom: 40px;
+}
+
+.skills-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+}
+
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
